@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/gdill/CLionProjects/Scheduling-Algorithms/roundRobin.cpp
+roundRobin.h
+C:/Users/gdill/CLionProjects/Scheduling-Algorithms/roundRobin.h
+
+C:/Users/gdill/CLionProjects/Scheduling-Algorithms/roundRobin.h
+iostream
+-
+cstring
+-
+queue
+-
+
