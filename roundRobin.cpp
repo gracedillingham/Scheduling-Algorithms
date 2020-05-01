@@ -11,16 +11,20 @@ void roundRobin::runRR() {
     //variables
     int processTimer = 3; //switch processes every 50 ms
     int burstTime[] = {5,3,8,9}; //burst times for processes in order
-    int arrivalTime[4] = {0,0,0,0}; //initialize arrival time array values to zero
+    map<string, int> arrivalTime = {{"P1", 1},{"P2",2},{"P3",3},{"P4",4}}; //initialize arrival time array values
     string processOrder[4] = {"P1", "P2", "P3", "P4"};
     int timeElapsed = 0; //keep track of time that has
     queue<string> processes;
     int counter = 0;
     double average = 0;
-    int toAdd = 0;
     queue<int> toComplete;
     int turnAround = 0;
     map<int, string> pairs = {{5,"P1"},{3,"P2"}, {8,"P3"}, {9,"P4"}};
+    map<string, int> ogPairs = {{"P1",5},{"P2",3}, {"P3",8}, {"P4",9}};
+    int temp;
+    string temp2;
+    int changeVal;
+    int waitTime;
 
     //add all values to queue
     for(int i = 0; i < 4; i++){
@@ -33,19 +37,28 @@ void roundRobin::runRR() {
 
     //queue pops from front
 
+    string currProcess;
+
     //execute processes in order for a limited amount of time
     //continue this time-scheduled loop until each process has finished
     //loop while queue is not empty
     //run for allotted time then rotate
     while(!toComplete.empty()){
 
+        cout << "Top of while, time elapsed: " << timeElapsed << endl;
+
         if(toComplete.front() <= processTimer){
 
             timeElapsed += toComplete.front();
 
-            turnAround = timeElapsed - 0;
+            currProcess = pairs.at(toComplete.front());
 
-            cout << "Process " << pairs.at(toComplete.front()) << " at " << toComplete.front() << " turn around time " << turnAround << endl;
+            turnAround = timeElapsed - arrivalTime.at(currProcess);
+
+            waitTime += turnAround - ogPairs.at(currProcess);
+
+            cout << "Process " << currProcess << " at " << toComplete.front() << " turn around time " << turnAround;
+            cout << " wait time: " << waitTime << endl;
 
             pairs.erase(toComplete.front());
             //execute for the remainder of the process' burst time
@@ -54,16 +67,21 @@ void roundRobin::runRR() {
         }//end if
         else{
 
-            int temp;
-            string temp2;
+            cout << "didn't match, process " << pairs.at(toComplete.front()) << endl;
+
             //execute for the length of processTimer
             //adjust burst time remaining
             temp = toComplete.front();
             temp2 = pairs.at(temp);
             toComplete.front() -= processTimer;
-            pairs.insert({toComplete.front(), temp2});
+            changeVal = toComplete.front();
+            toComplete.pop();
+            pairs.erase(temp);
+            pairs.insert({changeVal, temp2});
+            toComplete.push(changeVal);
 
             timeElapsed += processTimer;
+
 
         }//end else
 
