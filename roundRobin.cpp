@@ -10,48 +10,58 @@ void roundRobin::runRR() {
 
     //variables
     int processTimer = 3; //switch processes every 50 ms
-    int burstTime[] = {3,5,8,9}; //burst times for processes in order
+    int burstTime[] = {5,3,8,9}; //burst times for processes in order
     int arrivalTime[4] = {0,0,0,0}; //initialize arrival time array values to zero
-    int timeElapsed = 0; //keep track of time that has elapsed
+    string processOrder[4] = {"P1", "P2", "P3", "P4"};
+    int timeElapsed = 0; //keep track of time that has
+    queue<string> processes;
     int counter = 0;
     double average = 0;
     int toAdd = 0;
     queue<int> toComplete;
+    int turnAround = 0;
+    map<int, string> pairs = {{5,"P1"},{3,"P2"}, {8,"P3"}, {9,"P4"}};
 
     //add all values to queue
     for(int i = 0; i < 4; i++){
 
         //add weights to minimum priority queue
+        processes.push(processOrder[i]);
         toComplete.push(burstTime[i]);
 
     }//end for
+
+    //queue pops from front
 
     //execute processes in order for a limited amount of time
     //continue this time-scheduled loop until each process has finished
     //loop while queue is not empty
     //run for allotted time then rotate
     while(!toComplete.empty()){
-        cout << "in while" << endl;
 
         if(toComplete.front() <= processTimer){
 
-            cout << "in if" << endl;
-
             timeElapsed += toComplete.front();
 
-            cout << "at " << toComplete.front() << " time " << timeElapsed << endl;
+            turnAround = timeElapsed - 0;
 
+            cout << "Process " << pairs.at(toComplete.front()) << " at " << toComplete.front() << " turn around time " << turnAround << endl;
+
+            pairs.erase(toComplete.front());
             //execute for the remainder of the process' burst time
             toComplete.pop();
 
         }//end if
         else{
 
-            cout << "in else" << endl;
-
+            int temp;
+            string temp2;
             //execute for the length of processTimer
             //adjust burst time remaining
+            temp = toComplete.front();
+            temp2 = pairs.at(temp);
             toComplete.front() -= processTimer;
+            pairs.insert({toComplete.front(), temp2});
 
             timeElapsed += processTimer;
 
