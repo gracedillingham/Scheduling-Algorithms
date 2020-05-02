@@ -6,62 +6,52 @@
 
 void roundRobin::runRR() {
 
-    //need process list and matching burst/execution time
-
     //variables
     int processTimer = 3; //switch processes every 50 ms
     int burstTime[] = {5,3,8,9}; //burst times for processes in order
-    map<string, int> arrivalTime = {{"P1", 1},{"P2",2},{"P3",3},{"P4",4}}; //initialize arrival time array values
-    string processOrder[4] = {"P1", "P2", "P3", "P4"};
     int timeElapsed = 0; //keep track of time that has
-    queue<string> processes;
-    int counter = 0;
-    double average = 0;
     queue<int> toComplete;
     int turnAround = 0;
     map<int, string> pairs = {{5,"P1"},{3,"P2"}, {8,"P3"}, {9,"P4"}};
     map<string, int> ogPairs = {{"P1",5},{"P2",3}, {"P3",8}, {"P4",9}};
+    map<string, int> arrivalTime = {{"P1", 1},{"P2",2},{"P3",3},{"P4",4}}; //initialize arrival time array values
     int temp;
     string temp2;
     int changeVal;
     int waitTime;
-
-    //add all values to queue
-    for(int i = 0; i < 4; i++){
-
-        //add weights to minimum priority queue
-        processes.push(processOrder[i]);
-        toComplete.push(burstTime[i]);
-
-    }//end for
-
-    //queue pops from front
-
     string currProcess;
 
-    //execute processes in order for a limited amount of time
-    //continue this time-scheduled loop until each process has finished
-    //loop while queue is not empty
-    //run for allotted time then rotate
+
+     /* add all burst values to the queue; they will then be processed in a first-in, first-out
+     * order and returned to the end of the queue if the burst time is not complete */
+    for(int i = 0; i < 4; i++){
+        toComplete.push(burstTime[i]);
+    }//end for
+
+
+     /* execute processes in order for the amount of time determined by the processTimer
+     * continue this time-scheduled loop until each process has finished by running
+     * for the allotted time and then rotating */
     while(!toComplete.empty()){
 
         cout << "Top of while, time elapsed: " << timeElapsed << endl;
 
+        /*
+         * If the burst time will be completed in the determined process time, add the amount
+         * of time that will pass, determine the process the burst time belongs to, and calculate
+         * the process's turn around time and wait time. Then print the results update queue & pair container
+         */
         if(toComplete.front() <= processTimer){
 
             timeElapsed += toComplete.front();
-
             currProcess = pairs.at(toComplete.front());
-
             turnAround = timeElapsed - arrivalTime.at(currProcess);
-
             waitTime += turnAround - ogPairs.at(currProcess);
 
             cout << "Process " << currProcess << " at " << toComplete.front() << " turn around time " << turnAround;
             cout << " wait time: " << waitTime << endl;
 
             pairs.erase(toComplete.front());
-            //execute for the remainder of the process' burst time
             toComplete.pop();
 
         }//end if
@@ -84,15 +74,6 @@ void roundRobin::runRR() {
 
 
         }//end else
-
-        //adjust counter
-        if(counter >= 3){
-            counter = 0;
-        }
-        else{
-            counter++;
-        }
-
 
     }//end while
 
