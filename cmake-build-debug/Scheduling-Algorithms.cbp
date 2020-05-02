@@ -80,7 +80,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/gdill/CLionProjects/Scheduling-Algorithms/calculations.cpp">
+			<Option target="Scheduling-Algorithms"/>
+		</Unit>
+		<Unit filename="C:/Users/gdill/CLionProjects/Scheduling-Algorithms/calculations.h">
+			<Option target="Scheduling-Algorithms"/>
+		</Unit>
 		<Unit filename="C:/Users/gdill/CLionProjects/Scheduling-Algorithms/main.cpp">
+			<Option target="Scheduling-Algorithms"/>
+		</Unit>
+		<Unit filename="C:/Users/gdill/CLionProjects/Scheduling-Algorithms/priority.cpp">
+			<Option target="Scheduling-Algorithms"/>
+		</Unit>
+		<Unit filename="C:/Users/gdill/CLionProjects/Scheduling-Algorithms/priority.h">
 			<Option target="Scheduling-Algorithms"/>
 		</Unit>
 		<Unit filename="C:/Users/gdill/CLionProjects/Scheduling-Algorithms/roundRobin.cpp">

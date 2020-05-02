@@ -122,6 +122,33 @@ Scheduling-Algorithms/fast:
 	$(MAKE) -f CMakeFiles\Scheduling-Algorithms.dir\build.make CMakeFiles/Scheduling-Algorithms.dir/build
 .PHONY : Scheduling-Algorithms/fast
 
+calculations.obj: calculations.cpp.obj
+
+.PHONY : calculations.obj
+
+# target to build an object file
+calculations.cpp.obj:
+	$(MAKE) -f CMakeFiles\Scheduling-Algorithms.dir\build.make CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.obj
+.PHONY : calculations.cpp.obj
+
+calculations.i: calculations.cpp.i
+
+.PHONY : calculations.i
+
+# target to preprocess a source file
+calculations.cpp.i:
+	$(MAKE) -f CMakeFiles\Scheduling-Algorithms.dir\build.make CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.i
+.PHONY : calculations.cpp.i
+
+calculations.s: calculations.cpp.s
+
+.PHONY : calculations.s
+
+# target to generate assembly for a file
+calculations.cpp.s:
+	$(MAKE) -f CMakeFiles\Scheduling-Algorithms.dir\build.make CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.s
+.PHONY : calculations.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -148,6 +175,33 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) -f CMakeFiles\Scheduling-Algorithms.dir\build.make CMakeFiles/Scheduling-Algorithms.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+priority.obj: priority.cpp.obj
+
+.PHONY : priority.obj
+
+# target to build an object file
+priority.cpp.obj:
+	$(MAKE) -f CMakeFiles\Scheduling-Algorithms.dir\build.make CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.obj
+.PHONY : priority.cpp.obj
+
+priority.i: priority.cpp.i
+
+.PHONY : priority.i
+
+# target to preprocess a source file
+priority.cpp.i:
+	$(MAKE) -f CMakeFiles\Scheduling-Algorithms.dir\build.make CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.i
+.PHONY : priority.cpp.i
+
+priority.s: priority.cpp.s
+
+.PHONY : priority.s
+
+# target to generate assembly for a file
+priority.cpp.s:
+	$(MAKE) -f CMakeFiles\Scheduling-Algorithms.dir\build.make CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.s
+.PHONY : priority.cpp.s
 
 roundRobin.obj: roundRobin.cpp.obj
 
@@ -185,9 +239,15 @@ help:
 	@echo ... edit_cache
 	@echo ... Scheduling-Algorithms
 	@echo ... rebuild_cache
+	@echo ... calculations.obj
+	@echo ... calculations.i
+	@echo ... calculations.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... priority.obj
+	@echo ... priority.i
+	@echo ... priority.s
 	@echo ... roundRobin.obj
 	@echo ... roundRobin.i
 	@echo ... roundRobin.s

@@ -82,21 +82,51 @@ CMakeFiles/Scheduling-Algorithms.dir/roundRobin.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Scheduling-Algorithms.dir/roundRobin.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\gdill\CLionProjects\Scheduling-Algorithms\roundRobin.cpp -o CMakeFiles\Scheduling-Algorithms.dir\roundRobin.cpp.s
 
+CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.obj: CMakeFiles/Scheduling-Algorithms.dir/flags.make
+CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.obj: ../priority.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\gdill\CLionProjects\Scheduling-Algorithms\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Scheduling-Algorithms.dir\priority.cpp.obj -c C:\Users\gdill\CLionProjects\Scheduling-Algorithms\priority.cpp
+
+CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\gdill\CLionProjects\Scheduling-Algorithms\priority.cpp > CMakeFiles\Scheduling-Algorithms.dir\priority.cpp.i
+
+CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\gdill\CLionProjects\Scheduling-Algorithms\priority.cpp -o CMakeFiles\Scheduling-Algorithms.dir\priority.cpp.s
+
+CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.obj: CMakeFiles/Scheduling-Algorithms.dir/flags.make
+CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.obj: ../calculations.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\gdill\CLionProjects\Scheduling-Algorithms\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Scheduling-Algorithms.dir\calculations.cpp.obj -c C:\Users\gdill\CLionProjects\Scheduling-Algorithms\calculations.cpp
+
+CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\gdill\CLionProjects\Scheduling-Algorithms\calculations.cpp > CMakeFiles\Scheduling-Algorithms.dir\calculations.cpp.i
+
+CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\gdill\CLionProjects\Scheduling-Algorithms\calculations.cpp -o CMakeFiles\Scheduling-Algorithms.dir\calculations.cpp.s
+
 # Object files for target Scheduling-Algorithms
 Scheduling__Algorithms_OBJECTS = \
 "CMakeFiles/Scheduling-Algorithms.dir/main.cpp.obj" \
-"CMakeFiles/Scheduling-Algorithms.dir/roundRobin.cpp.obj"
+"CMakeFiles/Scheduling-Algorithms.dir/roundRobin.cpp.obj" \
+"CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.obj" \
+"CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.obj"
 
 # External object files for target Scheduling-Algorithms
 Scheduling__Algorithms_EXTERNAL_OBJECTS =
 
 Scheduling-Algorithms.exe: CMakeFiles/Scheduling-Algorithms.dir/main.cpp.obj
 Scheduling-Algorithms.exe: CMakeFiles/Scheduling-Algorithms.dir/roundRobin.cpp.obj
+Scheduling-Algorithms.exe: CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.obj
+Scheduling-Algorithms.exe: CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.obj
 Scheduling-Algorithms.exe: CMakeFiles/Scheduling-Algorithms.dir/build.make
 Scheduling-Algorithms.exe: CMakeFiles/Scheduling-Algorithms.dir/linklibs.rsp
 Scheduling-Algorithms.exe: CMakeFiles/Scheduling-Algorithms.dir/objects1.rsp
 Scheduling-Algorithms.exe: CMakeFiles/Scheduling-Algorithms.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\gdill\CLionProjects\Scheduling-Algorithms\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Scheduling-Algorithms.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\gdill\CLionProjects\Scheduling-Algorithms\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Scheduling-Algorithms.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Scheduling-Algorithms.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

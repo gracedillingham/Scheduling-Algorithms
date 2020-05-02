@@ -5,6 +5,7 @@
 #include <cstring>
 #include <iostream>
 #include "roundRobin.h"
+#include "priority.h"
 
 using namespace std;
 
@@ -14,10 +15,13 @@ using namespace std;
 
 int main(int argc, char** argv){
 
-    cout << "Hello " << endl;
-
+    cout << "Running Round Robin Scheduling: " << endl;
     roundRobin r;
     r.runRR();
+
+    cout << "Running Priority Scheduling: " << endl;
+    priority p;
+    p.runPriority();
 
     return 0;
 

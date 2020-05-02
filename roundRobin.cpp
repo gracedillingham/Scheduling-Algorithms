@@ -34,8 +34,6 @@ void roundRobin::runRR() {
      * for the allotted time and then rotating */
     while(!toComplete.empty()){
 
-        cout << "Top of while, time elapsed: " << timeElapsed << endl;
-
         /*
          * If the burst time will be completed in the determined process time, add the amount
          * of time that will pass, determine the process the burst time belongs to, and calculate
@@ -48,16 +46,13 @@ void roundRobin::runRR() {
             turnAround = timeElapsed - arrivalTime.at(currProcess);
             waitTime = turnAround - ogPairs.at(currProcess);
 
-            cout << "Process " << currProcess << " at " << toComplete.front() << " turn around time " << turnAround;
-            cout << " wait time: " << waitTime << endl;
+            cout << "Process " << currProcess << " turn around time " << turnAround << " wait time: " << waitTime << endl;
 
             pairs.erase(toComplete.front());
             toComplete.pop();
 
         }//end if
         else{
-
-            cout << "didn't match, process " << pairs.at(toComplete.front()) << endl;
 
             //execute for the length of processTimer
             //adjust burst time remaining
@@ -69,29 +64,13 @@ void roundRobin::runRR() {
             pairs.erase(temp);
             pairs.insert({changeVal, temp2});
             toComplete.push(changeVal);
-
             timeElapsed += processTimer;
 
-            cout << "top of toComplete " << toComplete.front() << endl;
         }//end else
 
     }//end while
 
-
-    cout << "end round robin" << endl;
-
 }//end runRR
-
-
-int roundRobin::calcWaitingTime() {
-
-    //waiting time is the total amount of time in the queue and
-    //can be calculated by turn around time - arrival time
-
-    return 0;
-
-}//end calcWaitingTime
-
 
 
 int roundRobin::calcTurnAroundTime() {

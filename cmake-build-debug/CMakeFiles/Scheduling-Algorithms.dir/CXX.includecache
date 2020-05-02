@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/gdill/CLionProjects/Scheduling-Algorithms/priority.cpp
+priority.h
+C:/Users/gdill/CLionProjects/Scheduling-Algorithms/priority.h
+
+C:/Users/gdill/CLionProjects/Scheduling-Algorithms/priority.h
+iostream
+-
+cstring
+-
+queue
+-
+map
+-
+
 C:/Users/gdill/CLionProjects/Scheduling-Algorithms/roundRobin.cpp
 roundRobin.h
 C:/Users/gdill/CLionProjects/Scheduling-Algorithms/roundRobin.h

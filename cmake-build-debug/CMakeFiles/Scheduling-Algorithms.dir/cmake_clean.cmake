@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.obj"
   "CMakeFiles/Scheduling-Algorithms.dir/main.cpp.obj"
+  "CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.obj"
   "CMakeFiles/Scheduling-Algorithms.dir/roundRobin.cpp.obj"
   "Scheduling-Algorithms.exe"
   "Scheduling-Algorithms.exe.manifest"
