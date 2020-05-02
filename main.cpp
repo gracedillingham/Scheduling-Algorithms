@@ -6,6 +6,7 @@
 #include <iostream>
 #include "roundRobin.h"
 #include "priority.h"
+#include "readFiles.h"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ using namespace std;
 
 int main(int argc, char** argv){
 
+
     cout << "Running Round Robin Scheduling: " << endl;
     roundRobin r;
     r.runRR();
@@ -22,6 +24,13 @@ int main(int argc, char** argv){
     cout << endl << "Running Priority Scheduling: " << endl;
     priority p;
     p.runPriority();
+
+   // cout << "top main " << endl;
+
+   // readFiles f;
+   // f.read();
+
+    cout << "end main" << endl;
 
     return 0;
 

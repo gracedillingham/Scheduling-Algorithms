@@ -17,12 +17,17 @@ public:
     map<int, string> getPairs();
     void setOgPairs(map<string,int> map);
     void setPairs(map<int,string> map);
+    void setProcessNum(int num);
+    int getProcessNum();
+    void setBursts();
+
+
     void getProcessTimer();
 
 private:
     map<int, string> pairs;
     map<string, int> ogPairs;
-
+    int processCount;
 };
 
 

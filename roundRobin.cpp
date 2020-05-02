@@ -7,23 +7,26 @@
 void roundRobin::runRR() {
 
     //variables
+    readFiles files;
+    files.read();
     int processTimer = 1; //switch processes every 50 ms
-    int burstTime[3] = {3,4,5}; //burst times for processes in order
+    int burstTime[6] = {3,4,5,10,12,15}; //burst times for processes in order
     int timeElapsed = 0; //keep track of time that has
     queue<int> toComplete;
-    map<int, string> pairs = {{3,"P1"},{4,"P2"}, {5,"P3"}};
-    map<string, int> ogPairs = {{"P1",3},{"P2",4}, {"P3",5}};
+    map<int, string> pairs = files.getPairs();
+    map<string, int> ogPairs = files.getOgPairs();
     int temp;
     string temp2;
     int changeVal;
     int waitTime;
     string currProcess;
     calculations c;
+    int total = 0;
 
 
      /* add all burst values to the queue; they will then be processed in a first-in, first-out
      * order and returned to the end of the queue if the burst time is not complete */
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < 6; i++){
         toComplete.push(burstTime[i]);
     }//end for
 
@@ -43,6 +46,7 @@ void roundRobin::runRR() {
             timeElapsed += toComplete.front();
             currProcess = pairs.at(toComplete.front());
             waitTime = c.calcWaitTime(timeElapsed, ogPairs.at(currProcess));
+            total += waitTime;
 
             cout << "Process " << currProcess << " turn around time " << timeElapsed << " wait time: " << waitTime << endl;
 
@@ -67,6 +71,11 @@ void roundRobin::runRR() {
         }//end else
 
     }//end while
+
+    cout << "final total " << total << endl;
+
+    int average = c.calcAverage(total,6);
+    cout << "Average wait time: " << average << endl;
 
 }//end runRR
 

@@ -10,3 +10,11 @@ double calculations::calcWaitTime(int turnAround, int burst){
     return waitTime;
 
 }//end calcWaitTime
+
+
+double calculations::calcAverage(int total, int num){
+
+    average = total/num;
+    return average;
+
+}//end calcAverage

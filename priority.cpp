@@ -7,19 +7,22 @@
 void priority::runPriority() {
 
     //variables
-    int burstTime[3] = {-3,-4,-5}; //burst times for processes in order
+    readFiles files;
+    files.read();
+    int burstTime[6] = {-3,-4,-5,-10,-12,-15}; //burst times for processes in order
     int timeElapsed = 0; //keep track of time that has
     priority_queue<int> toComplete;
-    map<int, string> pairs = {{3,"P1"},{4,"P2"}, {5,"P3"}};
-    map<string, int> ogPairs = {{"P1",3},{"P2",4}, {"P3",5}};
+    map<int, string> pairs = files.getPairs();
+    map<string, int> ogPairs = files.getOgPairs();
     int waitTime;
     string currProcess;
     int absVal;
     calculations c;
+    int total = 0;
 
 
     // add all burst values to the queue; they will then be processed in a first-in, first-out order (smallest first)
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < 6; i++){
         toComplete.push(burstTime[i]);
     }//end for
 
@@ -31,6 +34,7 @@ void priority::runPriority() {
         timeElapsed += absVal;
         currProcess = pairs.at(absVal);
         waitTime = c.calcWaitTime(timeElapsed, ogPairs.at(currProcess)); //time Elapsed = turnAround time
+        total += waitTime;
 
         cout << "Process " << currProcess << " turn around time " << timeElapsed << " wait time: " << waitTime << endl;
 
@@ -38,6 +42,11 @@ void priority::runPriority() {
         toComplete.pop();
 
     }//end while
+
+    cout << "final total " << total << endl;
+
+    int average = c.calcAverage(total,6);
+    cout << "Average wait time: " << average << endl;
 
 }//end runpriority
 
