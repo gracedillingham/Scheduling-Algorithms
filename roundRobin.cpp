@@ -7,14 +7,14 @@
 void roundRobin::runRR() {
 
     //variables
-    int processTimer = 3; //switch processes every 50 ms
-    int burstTime[] = {5,3,8,9}; //burst times for processes in order
+    int processTimer = 1; //switch processes every 50 ms
+    int burstTime[3] = {3,4,5}; //burst times for processes in order
     int timeElapsed = 0; //keep track of time that has
     queue<int> toComplete;
     int turnAround = 0;
-    map<int, string> pairs = {{5,"P1"},{3,"P2"}, {8,"P3"}, {9,"P4"}};
-    map<string, int> ogPairs = {{"P1",5},{"P2",3}, {"P3",8}, {"P4",9}};
-    map<string, int> arrivalTime = {{"P1", 1},{"P2",2},{"P3",3},{"P4",4}}; //initialize arrival time array values
+    map<int, string> pairs = {{3,"P1"},{4,"P2"}, {5,"P3"}};
+    map<string, int> ogPairs = {{"P1",3},{"P2",4}, {"P3",5}};
+    map<string, int> arrivalTime = {{"P1", 0},{"P2",0},{"P3",0}}; //initialize arrival time array values
     int temp;
     string temp2;
     int changeVal;
@@ -24,7 +24,7 @@ void roundRobin::runRR() {
 
      /* add all burst values to the queue; they will then be processed in a first-in, first-out
      * order and returned to the end of the queue if the burst time is not complete */
-    for(int i = 0; i < 4; i++){
+    for(int i = 0; i < 3; i++){
         toComplete.push(burstTime[i]);
     }//end for
 
@@ -46,7 +46,7 @@ void roundRobin::runRR() {
             timeElapsed += toComplete.front();
             currProcess = pairs.at(toComplete.front());
             turnAround = timeElapsed - arrivalTime.at(currProcess);
-            waitTime += turnAround - ogPairs.at(currProcess);
+            waitTime = turnAround - ogPairs.at(currProcess);
 
             cout << "Process " << currProcess << " at " << toComplete.front() << " turn around time " << turnAround;
             cout << " wait time: " << waitTime << endl;
@@ -72,7 +72,7 @@ void roundRobin::runRR() {
 
             timeElapsed += processTimer;
 
-
+            cout << "top of toComplete " << toComplete.front() << endl;
         }//end else
 
     }//end while
