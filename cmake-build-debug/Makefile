@@ -203,6 +203,33 @@ priority.cpp.s:
 	$(MAKE) -f CMakeFiles\Scheduling-Algorithms.dir\build.make CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.s
 .PHONY : priority.cpp.s
 
+readFiles.obj: readFiles.cpp.obj
+
+.PHONY : readFiles.obj
+
+# target to build an object file
+readFiles.cpp.obj:
+	$(MAKE) -f CMakeFiles\Scheduling-Algorithms.dir\build.make CMakeFiles/Scheduling-Algorithms.dir/readFiles.cpp.obj
+.PHONY : readFiles.cpp.obj
+
+readFiles.i: readFiles.cpp.i
+
+.PHONY : readFiles.i
+
+# target to preprocess a source file
+readFiles.cpp.i:
+	$(MAKE) -f CMakeFiles\Scheduling-Algorithms.dir\build.make CMakeFiles/Scheduling-Algorithms.dir/readFiles.cpp.i
+.PHONY : readFiles.cpp.i
+
+readFiles.s: readFiles.cpp.s
+
+.PHONY : readFiles.s
+
+# target to generate assembly for a file
+readFiles.cpp.s:
+	$(MAKE) -f CMakeFiles\Scheduling-Algorithms.dir\build.make CMakeFiles/Scheduling-Algorithms.dir/readFiles.cpp.s
+.PHONY : readFiles.cpp.s
+
 roundRobin.obj: roundRobin.cpp.obj
 
 .PHONY : roundRobin.obj
@@ -248,6 +275,9 @@ help:
 	@echo ... priority.obj
 	@echo ... priority.i
 	@echo ... priority.s
+	@echo ... readFiles.obj
+	@echo ... readFiles.i
+	@echo ... readFiles.s
 	@echo ... roundRobin.obj
 	@echo ... roundRobin.i
 	@echo ... roundRobin.s

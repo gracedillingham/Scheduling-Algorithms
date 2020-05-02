@@ -8,6 +8,8 @@
 #include <cstring>
 #include <queue>
 #include <map>
+#include "calculations.h"
+#include "readFiles.h"
 
 using namespace std;
 

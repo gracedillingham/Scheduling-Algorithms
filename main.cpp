@@ -19,7 +19,7 @@ int main(int argc, char** argv){
     roundRobin r;
     r.runRR();
 
-    cout << "Running Priority Scheduling: " << endl;
+    cout << endl << "Running Priority Scheduling: " << endl;
     priority p;
     p.runPriority();
 

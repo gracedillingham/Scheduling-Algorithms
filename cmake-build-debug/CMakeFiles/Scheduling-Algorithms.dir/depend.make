@@ -4,13 +4,22 @@
 CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.obj: ../calculations.cpp
 CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.obj: ../calculations.h
 
+CMakeFiles/Scheduling-Algorithms.dir/main.cpp.obj: ../calculations.h
 CMakeFiles/Scheduling-Algorithms.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/Scheduling-Algorithms.dir/main.cpp.obj: ../priority.h
+CMakeFiles/Scheduling-Algorithms.dir/main.cpp.obj: ../readFiles.h
 CMakeFiles/Scheduling-Algorithms.dir/main.cpp.obj: ../roundRobin.h
 
+CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.obj: ../calculations.h
 CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.obj: ../priority.cpp
 CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.obj: ../priority.h
+CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.obj: ../readFiles.h
 
+CMakeFiles/Scheduling-Algorithms.dir/readFiles.cpp.obj: ../readFiles.cpp
+CMakeFiles/Scheduling-Algorithms.dir/readFiles.cpp.obj: ../readFiles.h
+
+CMakeFiles/Scheduling-Algorithms.dir/roundRobin.cpp.obj: ../calculations.h
+CMakeFiles/Scheduling-Algorithms.dir/roundRobin.cpp.obj: ../readFiles.h
 CMakeFiles/Scheduling-Algorithms.dir/roundRobin.cpp.obj: ../roundRobin.cpp
 CMakeFiles/Scheduling-Algorithms.dir/roundRobin.cpp.obj: ../roundRobin.h
 

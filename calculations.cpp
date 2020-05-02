@@ -6,5 +6,7 @@
 
 double calculations::calcWaitTime(int turnAround, int burst){
 
-    return 0.0;
+    waitTime = turnAround - burst;
+    return waitTime;
+
 }//end calcWaitTime

@@ -10,13 +10,12 @@ void priority::runPriority() {
     int burstTime[3] = {-3,-4,-5}; //burst times for processes in order
     int timeElapsed = 0; //keep track of time that has
     priority_queue<int> toComplete;
-    int turnAround = 0;
     map<int, string> pairs = {{3,"P1"},{4,"P2"}, {5,"P3"}};
     map<string, int> ogPairs = {{"P1",3},{"P2",4}, {"P3",5}};
-    map<string, int> arrivalTime = {{"P1", 0},{"P2",0},{"P3",0}}; //initialize arrival time array values
     int waitTime;
     string currProcess;
     int absVal;
+    calculations c;
 
 
     // add all burst values to the queue; they will then be processed in a first-in, first-out order (smallest first)
@@ -31,10 +30,9 @@ void priority::runPriority() {
         absVal = abs(toComplete.top());
         timeElapsed += absVal;
         currProcess = pairs.at(absVal);
-        turnAround = timeElapsed - arrivalTime.at(currProcess);
-        waitTime = turnAround - ogPairs.at(currProcess);
+        waitTime = c.calcWaitTime(timeElapsed, ogPairs.at(currProcess)); //time Elapsed = turnAround time
 
-        cout << "Process " << currProcess << " turn around time " << turnAround << " wait time: " << waitTime << endl;
+        cout << "Process " << currProcess << " turn around time " << timeElapsed << " wait time: " << waitTime << endl;
 
         pairs.erase(absVal);
         toComplete.pop();

@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/gdill/CLionProjects/Scheduling-Algorithms/calculations.cpp" "C:/Users/gdill/CLionProjects/Scheduling-Algorithms/cmake-build-debug/CMakeFiles/Scheduling-Algorithms.dir/calculations.cpp.obj"
   "C:/Users/gdill/CLionProjects/Scheduling-Algorithms/main.cpp" "C:/Users/gdill/CLionProjects/Scheduling-Algorithms/cmake-build-debug/CMakeFiles/Scheduling-Algorithms.dir/main.cpp.obj"
   "C:/Users/gdill/CLionProjects/Scheduling-Algorithms/priority.cpp" "C:/Users/gdill/CLionProjects/Scheduling-Algorithms/cmake-build-debug/CMakeFiles/Scheduling-Algorithms.dir/priority.cpp.obj"
+  "C:/Users/gdill/CLionProjects/Scheduling-Algorithms/readFiles.cpp" "C:/Users/gdill/CLionProjects/Scheduling-Algorithms/cmake-build-debug/CMakeFiles/Scheduling-Algorithms.dir/readFiles.cpp.obj"
   "C:/Users/gdill/CLionProjects/Scheduling-Algorithms/roundRobin.cpp" "C:/Users/gdill/CLionProjects/Scheduling-Algorithms/cmake-build-debug/CMakeFiles/Scheduling-Algorithms.dir/roundRobin.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

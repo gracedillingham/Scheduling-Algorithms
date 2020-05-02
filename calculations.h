@@ -9,7 +9,12 @@
 class calculations {
 public:
     double calcWaitTime(int turnAround, int burst); //calculate a process's total wait time in the queue
+    double calcTurnAround(int completion, int arrival);
 
+private:
+    double waitTime;
+    double turnAroundTime;
+    double average;
 };
 
 

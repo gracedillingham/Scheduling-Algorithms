@@ -11,7 +11,7 @@ set (EXE_NAME Scheduling-Algorithms)
 #   set (input02 "train_target.csv")
 # etc....
 
-
+set (input01 testData.txt)
 
 #
 ##########################################
@@ -22,4 +22,4 @@ foreach(file IN LISTS input01 input02 input03 input04)
 endforeach()
 
 set(CMAKE_CXX_STANDARD 17)
-add_executable(Scheduling-Algorithms main.cpp roundRobin.cpp priority.cpp calculations.cpp)
+add_executable(Scheduling-Algorithms main.cpp roundRobin.cpp priority.cpp calculations.cpp readFiles.cpp)

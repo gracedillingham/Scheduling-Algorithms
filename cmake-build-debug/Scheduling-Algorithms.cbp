@@ -95,6 +95,12 @@
 		<Unit filename="C:/Users/gdill/CLionProjects/Scheduling-Algorithms/priority.h">
 			<Option target="Scheduling-Algorithms"/>
 		</Unit>
+		<Unit filename="C:/Users/gdill/CLionProjects/Scheduling-Algorithms/readFiles.cpp">
+			<Option target="Scheduling-Algorithms"/>
+		</Unit>
+		<Unit filename="C:/Users/gdill/CLionProjects/Scheduling-Algorithms/readFiles.h">
+			<Option target="Scheduling-Algorithms"/>
+		</Unit>
 		<Unit filename="C:/Users/gdill/CLionProjects/Scheduling-Algorithms/roundRobin.cpp">
 			<Option target="Scheduling-Algorithms"/>
 		</Unit>
@@ -102,6 +108,9 @@
 			<Option target="Scheduling-Algorithms"/>
 		</Unit>
 		<Unit filename="C:/Users/gdill/CLionProjects/Scheduling-Algorithms/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/gdill/CLionProjects/Scheduling-Algorithms/testData.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
