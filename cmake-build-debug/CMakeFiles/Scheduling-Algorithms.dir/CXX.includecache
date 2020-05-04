@@ -23,6 +23,8 @@ queue
 -
 map
 -
+vector
+-
 calculations.h
 C:/Users/gdill/CLionProjects/Scheduling-Algorithms/calculations.h
 readFiles.h
@@ -34,6 +36,8 @@ iostream
 fstream
 -
 map
+-
+vector
 -
 
 C:/Users/gdill/CLionProjects/Scheduling-Algorithms/roundRobin.cpp

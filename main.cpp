@@ -2,11 +2,9 @@
 // Created by gdill on 4/27/2020.
 //
 
-#include <cstring>
 #include <iostream>
 #include "roundRobin.h"
 #include "priority.h"
-#include "readFiles.h"
 
 using namespace std;
 
@@ -25,12 +23,6 @@ int main(int argc, char** argv){
     priority p;
     p.runPriority();
 
-   // cout << "top main " << endl;
-
-   // readFiles f;
-   // f.read();
-
-    cout << "end main" << endl;
 
     return 0;
 

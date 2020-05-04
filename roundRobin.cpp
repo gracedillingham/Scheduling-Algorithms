@@ -8,13 +8,9 @@ void roundRobin::runRR() {
 
     //variables
     readFiles files;
-    files.read();
-    int processTimer = 1; //switch processes every 50 ms
-    int burstTime[6] = {3,4,5,10,12,15}; //burst times for processes in order
-    int timeElapsed = 0; //keep track of time that has
+    int processTimer = 3;
+    int timeElapsed = 0;
     queue<int> toComplete;
-    map<int, string> pairs = files.getPairs();
-    map<string, int> ogPairs = files.getOgPairs();
     int temp;
     string temp2;
     int changeVal;
@@ -23,11 +19,17 @@ void roundRobin::runRR() {
     calculations c;
     int total = 0;
 
+    //read in data files and import values
+    files.read();
+    vector<int>burstTime = files.getBursts();
+    map<int, string> pairs = files.getPairs();
+    map<string, int> ogPairs = files.getOgPairs();
+    int processCount = files.getProcessNum();
 
      /* add all burst values to the queue; they will then be processed in a first-in, first-out
      * order and returned to the end of the queue if the burst time is not complete */
-    for(int i = 0; i < 6; i++){
-        toComplete.push(burstTime[i]);
+    for(int i = 0; i < processCount; i++){
+        toComplete.push(burstTime.at(i));
     }//end for
 
 
@@ -47,17 +49,18 @@ void roundRobin::runRR() {
             currProcess = pairs.at(toComplete.front());
             waitTime = c.calcWaitTime(timeElapsed, ogPairs.at(currProcess));
             total += waitTime;
-
             cout << "Process " << currProcess << " turn around time " << timeElapsed << " wait time: " << waitTime << endl;
-
             pairs.erase(toComplete.front());
             toComplete.pop();
 
         }//end if
         else{
 
-            //execute for the length of processTimer
-            //adjust burst time remaining
+             /*
+             * execute for the length of the processTimer, adjust burst time remaining,
+             * move the process at the front of the queue to the back of the queue, and
+              * increment the amount of time that has Elapsed
+             */
             temp = toComplete.front();
             temp2 = pairs.at(temp);
             toComplete.front() -= processTimer;
@@ -72,21 +75,12 @@ void roundRobin::runRR() {
 
     }//end while
 
-    cout << "final total " << total << endl;
-
-    int average = c.calcAverage(total,6);
+    int average = c.calcAverage(total, processCount);
     cout << "Average wait time: " << average << endl;
 
 }//end runRR
 
 
-int roundRobin::calcTurnAroundTime() {
-
-    //turn around time is the time between submission into the queue
-    //and completion, calculated as completion time - arrival time
-
-    return 0;
-}//end calcTurnAroundTime
 
 
 

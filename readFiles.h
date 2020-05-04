@@ -7,6 +7,7 @@
 #include <iostream>
 #include <fstream>
 #include <map>
+#include <vector>
 
 using namespace std;
 
@@ -19,15 +20,15 @@ public:
     void setPairs(map<int,string> map);
     void setProcessNum(int num);
     int getProcessNum();
-    void setBursts();
+    void setBursts(vector<int> v);
+    vector<int> getBursts();
 
-
-    void getProcessTimer();
 
 private:
     map<int, string> pairs;
     map<string, int> ogPairs;
     int processCount;
+    vector<int> returnBursts;
 };
 
 

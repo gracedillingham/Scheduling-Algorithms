@@ -8,6 +8,7 @@
 #include <cstring>
 #include <queue>
 #include <map>
+#include <vector>
 #include "calculations.h"
 #include "readFiles.h"
 

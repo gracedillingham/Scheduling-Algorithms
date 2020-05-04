@@ -11,6 +11,7 @@ void readFiles::read(){
     int burstTime;
     string process;
     ifstream infile;
+    vector<int> bursts;
     map<int, string> readPairs;
     map<string, int> readOgPairs;
     map<int, string> pairPtr;
@@ -19,35 +20,31 @@ void readFiles::read(){
     //open command file & test for open
     infile.open("testData.txt");
 
-    //cout << "test file for open " << endl;
-
     if(!infile.is_open()){
         cout << "Data file is not open" << endl;
     }
 
+    //read in and print number of processes
     infile >> processCount;
-    cout << processCount << endl;
+    setProcessNum(processCount);
+    cout << "Process Count: " << processCount << endl;
 
+    //read in test data
     for(int i = 0; i < processCount; i++){
 
         infile >> burstTime;
         infile >> process;
 
-       // cout << burstTime << endl;
-        //cout << process << endl;
-
-        //bursts[i] = burstTime;
+        bursts.push_back(burstTime);
         readPairs.insert({burstTime, process});
         readOgPairs.insert({process, burstTime});
 
     }//end for
 
+    //set data to be returned
+    setBursts(bursts);
     setOgPairs(readOgPairs);
     setPairs(readPairs);
-
-    cout << "Pair top " << readPairs.at(3) << endl;
-
-    cout << "bottom read" << endl;
 
 }//end read
 
@@ -81,7 +78,13 @@ int readFiles::getProcessNum(){
     return processCount;
 }//end getProcessNum
 
+void readFiles::setBursts(vector<int> v){
+    returnBursts = v;
+}//end getBursts
 
+vector<int> readFiles::getBursts(){
+    return returnBursts;
+}//end getBursts
 
 
 

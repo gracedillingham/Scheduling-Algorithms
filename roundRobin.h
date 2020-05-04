@@ -16,7 +16,6 @@ using namespace std;
 class roundRobin {
 public:
     void runRR();               //run processes through the round robin scheduling algorithm
-    int calcTurnAroundTime();   //calculate turn around time for a process
 };
 
 
